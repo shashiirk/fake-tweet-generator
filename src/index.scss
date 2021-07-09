@@ -1,12 +1,14 @@
 $blue: #1da1f2;
-$black: #323639;
-$dark-gray: #657786;
+$black: #0f1419;
+$dark-gray: #536471;
 $light-gray: #aab8c2;
-$extra-light-gray: #e1e8ed;
+$extra-light-gray: #cad0d5;
 $extra-extra-light-gray: #f5f8fa;
 $theme-default: #ffffff;
 $theme-lights-out: #15202b;
 $theme-dim: #000000;
+$tweet-border: #eff3f4;
+$tweet-icon: #536471;
 $font-stack: 'Roboto', sans-serif;
 
 * {
@@ -56,6 +58,145 @@ main {
   max-width: 1024px;
   width: 100%;
   margin: auto;
+  padding: 32px 16px;
+  display: flex;
+  align-items: flex-start;
+
+  .form {
+    border: 1px $extra-light-gray solid;
+    border-radius: 8px;
+    padding: 24px;
+    width: 100%;
+    margin-right: 16px;
+
+    h2 {
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 32px;
+    }
+
+    .form-control {
+      margin-bottom: 24px;
+
+      &:last-child {
+        margin-bottom: 6px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      input,
+      textarea {
+        display: block;
+        font: inherit;
+        width: 100%;
+        padding: 10px 14px;
+        border: 1px $extra-light-gray solid;
+        border-radius: 8px;
+        outline: none;
+        transition: border-color 200ms ease-in;
+
+        &:focus {
+          border-color: $blue;
+        }
+
+        &::placeholder {
+          color: #9ca1a5;
+        }
+      }
+
+      textarea {
+        resize: vertical;
+      }
+    }
+  }
+
+  .tweet-desk {
+    border: 1px $extra-light-gray solid;
+    border-radius: 8px;
+    padding: 24px;
+    width: 100%;
+
+    h2 {
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 32px;
+    }
+
+    .tweet {
+      border: 1px $tweet-border solid;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
+      padding: 0 16px;
+
+      .head {
+        padding-top: 12px;
+        display: flex;
+        justify-content: space-between;
+
+        .title {
+          display: flex;
+          align-items: center;
+
+          img {
+            display: inline-block;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            margin-right: 12px;
+          }
+
+          .text p:first-child {
+            font-weight: 700;
+          }
+        }
+
+        .dots {
+          color: $dark-gray;
+        }
+      }
+
+      .message {
+        .content {
+          font-size: 18px;
+          padding-top: 16px;
+        }
+
+        .timestamp {
+          color: $dark-gray;
+          padding: 16px 0;
+        }
+      }
+
+      .stats {
+        border-top: 1px $tweet-border solid;
+        color: $dark-gray;
+        padding: 16px 4px;
+        display: flex;
+
+        .stat {
+          margin-right: 24px;
+
+          .count {
+            font-weight: 700;
+            color: $black;
+          }
+        }
+      }
+
+      .tail {
+        border-top: 1px $tweet-border solid;
+        padding: 12px 0;
+        display: flex;
+        justify-content: space-around;
+
+        svg {
+          color: $tweet-icon;
+        }
+      }
+    }
+  }
 }
 
 footer {
