@@ -2,11 +2,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-  output: {
-    clean: true,
-  },
   module: {
     rules: [
+      {
+        test: /\.html$/,
+        loader: 'html-loader',
+      },
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
@@ -20,6 +21,10 @@ module.exports = {
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/,
+        type: 'asset/resource',
+      },
     ],
   },
   plugins: [
@@ -31,5 +36,8 @@ module.exports = {
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
     open: true,
+  },
+  output: {
+    clean: true,
   },
 };
