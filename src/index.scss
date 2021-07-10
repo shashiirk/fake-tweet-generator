@@ -4,11 +4,11 @@ $dark-gray: #536471;
 $light-gray: #aab8c2;
 $extra-light-gray: #cad0d5;
 $extra-extra-light-gray: #f5f8fa;
+$hint: #8c9094;
 $theme-default: #ffffff;
 $theme-lights-out: #15202b;
 $theme-dim: #000000;
 $tweet-border: #eff3f4;
-$tweet-icon: #536471;
 $font-stack: 'Roboto', sans-serif;
 
 * {
@@ -84,7 +84,6 @@ main {
 
       label {
         display: block;
-        margin-bottom: 4px;
       }
 
       input,
@@ -93,6 +92,7 @@ main {
         font: inherit;
         width: 100%;
         padding: 10px 14px;
+        margin: 4px 0;
         border: 1px $extra-light-gray solid;
         border-radius: 8px;
         outline: none;
@@ -109,6 +109,42 @@ main {
 
       textarea {
         resize: vertical;
+      }
+
+      small {
+        font-size: 13px;
+        color: $hint;
+      }
+
+      .username_input {
+        display: block;
+        color: $hint;
+        font: inherit;
+        width: 100%;
+        padding: 0 14px;
+        margin: 4px 0;
+        border: 1px $extra-light-gray solid;
+        border-radius: 8px;
+        outline: none;
+        transition: border-color 200ms ease-in, color 200ms ease-in;
+        display: flex;
+        align-items: center;
+
+        &:focus-within {
+          border-color: $blue;
+          color: $black;
+        }
+
+        &::placeholder {
+          color: #9ca1a5;
+        }
+
+        input {
+          display: inline;
+          margin: 0 0 0 2px;
+          padding: 10px 0;
+          border: none;
+        }
       }
     }
   }
@@ -127,8 +163,8 @@ main {
 
     .tweet {
       border: 1px $tweet-border solid;
-      box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
       padding: 0 16px;
+      font-size: 15px;
 
       .head {
         padding-top: 12px;
@@ -147,8 +183,14 @@ main {
             margin-right: 12px;
           }
 
-          .text p:first-child {
-            font-weight: 700;
+          .text {
+            p:first-child {
+              font-weight: 700;
+            }
+
+            p:nth-child(2) span {
+              color: $dark-gray;
+            }
           }
         }
 
@@ -157,15 +199,16 @@ main {
         }
       }
 
-      .message {
-        .content {
-          font-size: 18px;
+      .content {
+        .message {
           padding-top: 16px;
+          font-size: 23px;
         }
 
-        .timestamp {
+        .tweet_info {
           color: $dark-gray;
           padding: 16px 0;
+          display: flex;
         }
       }
 
@@ -182,6 +225,10 @@ main {
             font-weight: 700;
             color: $black;
           }
+
+          &.hide {
+            display: none;
+          }
         }
       }
 
@@ -192,7 +239,7 @@ main {
         justify-content: space-around;
 
         svg {
-          color: $tweet-icon;
+          color: $dark-gray;
         }
       }
     }

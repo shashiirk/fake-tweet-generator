@@ -24,14 +24,20 @@
         <div class="form-control">
           <label for="name">Name</label>
           <input type="text" id="name" />
+          <small><span class="count">0</span>/50 characters</small>
         </div>
         <div class="form-control">
           <label for="username">Username</label>
-          <input type="text" id="username" />
+          <div class="username_input">@<input type="text" id="username" /></div>
+          <small
+            ><span class="count">0</span>/15 characters. Only numbers, letters
+            or _ characters</small
+          >
         </div>
         <div class="form-control">
           <label for="message">Message</label>
           <textarea id="message" rows="3"></textarea>
+          <small><span class="count">0</span>/280 characters</small>
         </div>
         <div class="form-control">
           <label for="time">Time</label>
@@ -61,15 +67,15 @@
             <div class="title">
               <img src="https://source.unsplash.com/daily" alt="avatar" />
               <div class="text">
-                <p id="name">Name</p>
-                <p id="username">@username</p>
+                <p id="tweet_name">Name</p>
+                <p>@<span id="tweet_username">username</span></p>
               </div>
             </div>
             <div class="dots">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
+                width="19"
+                height="19"
                 viewBox="0 0 24 24"
                 fill="currentColor"
               >
@@ -81,26 +87,27 @@
               </svg>
             </div>
           </div>
-          <div class="message">
-            <div class="content">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Praesentium ab facilis porro! A suscipit officiis molestiae!
+          <div class="content">
+            <div id="tweet_message" class="message">
+              Generate convincing fake tweet images
             </div>
-            <div class="timestamp">
-              <span class="item">4:38 AM</span> &centerdot;
-              <span class="item">Jul 7, 2021</span> &centerdot;
-              <span class="item">Twitter for iPhone</span>
+            <div class="tweet_info">
+              <div id="tweet_timestamp" class="timestamp">
+                <span>4:38 AM</span> &centerdot;
+                <span>Jul 7, 2021</span> &centerdot;
+              </div>
+              <div>&nbsp;Twitter for iPhone</div>
             </div>
           </div>
           <div class="stats">
             <div class="stat">
-              <span id="retweet-count" class="count">201</span> Retweets
+              <span id="tweet_retweets" class="count">96</span> Retweets
             </div>
             <div class="stat">
-              <span id="quotes-count" class="count">128</span> Quote Tweets
+              <span id="tweet_quotes" class="count">88</span> Quote Tweets
             </div>
             <div class="stat">
-              <span id="likes-count" class="count">1028</span> Likes
+              <span id="tweet_likes" class="count">153</span> Likes
             </div>
           </div>
           <div class="tail">
