@@ -35,6 +35,7 @@ module.exports = {
   ],
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
+    hot: true,
     open: true,
   },
   output: {
