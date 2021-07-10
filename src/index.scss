@@ -2,13 +2,14 @@ $blue: #1da1f2;
 $black: #0f1419;
 $dark-gray: #536471;
 $light-gray: #aab8c2;
-$extra-light-gray: #cad0d5;
+$extra-light-gray: #cbd5e1;
 $extra-extra-light-gray: #f5f8fa;
 $hint: #8c9094;
 $theme-default: #ffffff;
 $theme-lights-out: #15202b;
 $theme-dim: #000000;
 $tweet-border: #eff3f4;
+$bg: #f8fafc;
 $font-stack: 'Roboto', sans-serif;
 
 * {
@@ -22,6 +23,7 @@ html {
 }
 
 body {
+  background-color: $bg;
   color: $black;
   min-height: 100vh;
   display: flex;
@@ -38,7 +40,7 @@ a {
 .bar {
   height: 8px;
   background-color: $blue;
-  background-image: linear-gradient(to left, #b721ff 0%, #21d4fd 100%);
+  background: linear-gradient(to right, #00c6ff, #0072ff);
 }
 
 header {
@@ -63,7 +65,8 @@ main {
   align-items: flex-start;
 
   .form {
-    border: 1px $extra-light-gray solid;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     border-radius: 8px;
     padding: 24px;
     width: 100%;
@@ -150,7 +153,8 @@ main {
   }
 
   .tweet-desk {
-    border: 1px $extra-light-gray solid;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     border-radius: 8px;
     padding: 24px;
     width: 100%;
@@ -177,8 +181,6 @@ main {
 
           img {
             display: inline-block;
-            width: 48px;
-            height: 48px;
             border-radius: 50%;
             margin-right: 12px;
           }
@@ -186,6 +188,12 @@ main {
           .text {
             p:first-child {
               font-weight: 700;
+              display: flex;
+              align-items: center;
+
+              .verified {
+                margin-left: 2px;
+              }
             }
 
             p:nth-child(2) span {
