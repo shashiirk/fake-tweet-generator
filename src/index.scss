@@ -1,14 +1,22 @@
 $blue: #1da1f2;
 $black: #0f1419;
-$dark-gray: #536471;
 $light-gray: #aab8c2;
 $extra-light-gray: #cbd5e1;
 $extra-extra-light-gray: #f5f8fa;
 $hint: #8c9094;
-$theme-default: #ffffff;
-$theme-lights-out: #15202b;
-$theme-dim: #000000;
-$tweet-border: #eff3f4;
+$theme-light: #ffffff;
+$theme-light-gray-text: #aab8c2;
+$theme-light-icon: #aab8c2;
+$theme-light-border: #eff3f4;
+$theme-dim: #15202b;
+$theme-dim-gray-text: #798a96;
+$theme-dim-border: #38444d;
+$theme-dim-icon: #8899a6;
+$theme-dark: #000000;
+$theme-dark-white-text: white;
+$theme-dark-gray-text: #798a96;
+$theme-dark-border: #38444d;
+$theme-dark-icon: #8899a6;
 $bg: #f8fafc;
 $font-stack: 'Roboto', sans-serif;
 
@@ -73,8 +81,8 @@ main {
     margin-right: 16px;
 
     h2 {
-      font-size: 20px;
-      font-weight: 500;
+      font-size: 22px;
+      font-weight: 600;
       margin-bottom: 32px;
     }
 
@@ -82,11 +90,12 @@ main {
       margin-bottom: 24px;
 
       &:last-child {
-        margin-bottom: 6px;
+        margin-bottom: 2px;
       }
 
       label {
         display: block;
+        font-weight: 500;
       }
 
       input,
@@ -97,7 +106,7 @@ main {
         padding: 10px 14px;
         margin: 4px 0;
         border: 1px $extra-light-gray solid;
-        border-radius: 8px;
+        border-radius: 6px;
         outline: none;
         transition: border-color 200ms ease-in;
 
@@ -127,7 +136,7 @@ main {
         padding: 0 14px;
         margin: 4px 0;
         border: 1px $extra-light-gray solid;
-        border-radius: 8px;
+        border-radius: 6px;
         outline: none;
         transition: border-color 200ms ease-in, color 200ms ease-in;
         display: flex;
@@ -149,6 +158,84 @@ main {
           border: none;
         }
       }
+
+      input[type='radio'] {
+        display: inline;
+        width: fit-content;
+
+        + label {
+          display: inline;
+        }
+      }
+
+      p {
+        font-weight: 500;
+      }
+
+      .group {
+        margin-top: 10px;
+        display: flex;
+
+        .radio_container {
+          display: block;
+          position: relative;
+          padding-left: 22px;
+          margin-right: 20px;
+          cursor: pointer;
+          font-size: 16px;
+          font-weight: 400;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+
+        .radio_container input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 0;
+          width: 0;
+        }
+
+        .radio_mark {
+          position: absolute;
+          top: 1px;
+          left: 0;
+          height: 16px;
+          width: 16px;
+          border: 1px $light-gray solid;
+          border-radius: 50%;
+        }
+
+        .radio_container input:focus ~ .radio_mark {
+          box-shadow: 0 0 0 3px rgba(29, 161, 242, 0.4);
+        }
+
+        .radio_container input:checked ~ .radio_mark {
+          background-color: $blue;
+          border-color: $blue;
+        }
+
+        .radio_mark:after {
+          content: '';
+          position: absolute;
+          display: none;
+        }
+
+        .radio_container input:checked ~ .radio_mark:after {
+          display: block;
+        }
+
+        .radio_container .radio_mark:after {
+          top: 3px;
+          left: 3px;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: white;
+        }
+      }
     }
   }
 
@@ -160,13 +247,13 @@ main {
     width: 100%;
 
     h2 {
-      font-size: 20px;
-      font-weight: 500;
+      font-size: 22px;
+      font-weight: 600;
       margin-bottom: 32px;
     }
 
     .tweet {
-      border: 1px $tweet-border solid;
+      border: 1px $theme-light-border solid;
       padding: 0 16px;
       font-size: 15px;
 
@@ -193,17 +280,22 @@ main {
 
               .verified {
                 margin-left: 2px;
+                font-weight: 400;
+
+                &.hide {
+                  display: none;
+                }
               }
             }
 
-            p:nth-child(2) span {
-              color: $dark-gray;
+            p:nth-child(2) {
+              color: $theme-light-gray-text;
             }
           }
         }
 
         .dots {
-          color: $dark-gray;
+          color: $theme-light-gray-text;
         }
       }
 
@@ -214,15 +306,15 @@ main {
         }
 
         .tweet_info {
-          color: $dark-gray;
+          color: $theme-light-gray-text;
           padding: 16px 0;
           display: flex;
         }
       }
 
       .stats {
-        border-top: 1px $tweet-border solid;
-        color: $dark-gray;
+        border-top: 1px $theme-light-border solid;
+        color: $theme-light-gray-text;
         padding: 16px 4px;
         display: flex;
 
@@ -241,13 +333,79 @@ main {
       }
 
       .tail {
-        border-top: 1px $tweet-border solid;
+        border-top: 1px $theme-light-border solid;
         padding: 12px 0;
         display: flex;
         justify-content: space-around;
 
         svg {
-          color: $dark-gray;
+          color: $theme-light-icon;
+        }
+      }
+
+      &.dim {
+        background-color: $theme-dim;
+        color: white;
+
+        .head {
+          .title .text p:nth-child(2),
+          .dots {
+            color: $theme-dim-gray-text;
+          }
+        }
+
+        .content .tweet_info {
+          color: $theme-dim-gray-text;
+        }
+
+        .stats {
+          border-top: 1px $theme-dim-border solid;
+          color: $theme-dim-gray-text;
+
+          .stat .count {
+            color: white;
+          }
+        }
+
+        .tail {
+          border-top: 1px $theme-dim-border solid;
+
+          svg {
+            color: $theme-dim-gray-text;
+          }
+        }
+      }
+
+      &.dark {
+        background-color: $theme-dark;
+        color: $theme-dark-white-text;
+
+        .head {
+          .title .text p:nth-child(2),
+          .dots {
+            color: $theme-dark-gray-text;
+          }
+        }
+
+        .content .tweet_info {
+          color: $theme-dark-gray-text;
+        }
+
+        .stats {
+          border-top: 1px $theme-dark-border solid;
+          color: $theme-dark-gray-text;
+
+          .stat .count {
+            color: white;
+          }
+        }
+
+        .tail {
+          border-top: 1px $theme-dark-border solid;
+
+          svg {
+            color: $theme-dark-gray-text;
+          }
         }
       }
     }

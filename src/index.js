@@ -6,15 +6,23 @@ const username = document.getElementById('username');
 const message = document.getElementById('message');
 const time = document.getElementById('time');
 const date = document.getElementById('date');
+const client = document.getElementById('client');
 const retweets = document.getElementById('retweets');
 const quotes = document.getElementById('quotes');
 const likes = document.getElementById('likes');
 
+// Capturing all Radio buttons
+const themeRadios = document.getElementsByName('theme_radio');
+const verifiedRadios = document.getElementsByName('verified_radio');
+
 // Preview's DOM elements
+const tweet = document.getElementById('tweet');
 const tweetName = document.getElementById('tweet_name');
+const tweetVerified = document.getElementById('tweet_verified');
 const tweetUsername = document.getElementById('tweet_username');
 const tweetMessage = document.getElementById('tweet_message');
 const tweetTimestamp = document.getElementById('tweet_timestamp');
+const tweetClient = document.getElementById('tweet_client');
 const tweetRetweets = document.getElementById('tweet_retweets');
 const tweetQuotes = document.getElementById('tweet_quotes');
 const tweetLikes = document.getElementById('tweet_likes');
@@ -138,6 +146,17 @@ function renderTimestamp() {
   `;
 }
 
+// Render Client in Tweet
+function renderClient() {
+  const clientValue = client.value.trim();
+
+  if (clientValue === '') {
+    tweetClient.innerText = 'Twitter Web App';
+  } else {
+    tweetClient.innerText = clientValue;
+  }
+}
+
 // Render Retweets in Tweet
 function renderRetweets() {
   tweetRetweets.parentElement.classList.remove('hide');
@@ -216,6 +235,28 @@ function setTimestamp() {
   renderTimestamp();
 }
 
+function toggleTheme(ev) {
+  const choice = ev.target.value;
+
+  if (choice === 'dim') {
+    tweet.className = 'tweet dim';
+  } else if (choice === 'dark') {
+    tweet.className = 'tweet dark';
+  } else {
+    tweet.className = 'tweet';
+  }
+}
+
+function toggleVerified(ev) {
+  const choice = ev.target.value;
+
+  if (choice === 'show') {
+    tweetVerified.classList.remove('hide');
+  } else {
+    tweetVerified.classList.add('hide');
+  }
+}
+
 // On load
 setTimestamp();
 
@@ -225,6 +266,15 @@ username.addEventListener('input', renderUsername);
 message.addEventListener('input', renderMessage);
 time.addEventListener('input', renderTimestamp);
 date.addEventListener('input', renderTimestamp);
+client.addEventListener('input', renderClient);
 retweets.addEventListener('input', renderRetweets);
 quotes.addEventListener('input', renderQuotes);
 likes.addEventListener('input', renderLikes);
+
+for (let i = 0; i < themeRadios.length; i++) {
+  themeRadios[i].addEventListener('change', toggleTheme);
+}
+
+for (let i = 0; i < verifiedRadios.length; i++) {
+  verifiedRadios[i].addEventListener('change', toggleVerified);
+}

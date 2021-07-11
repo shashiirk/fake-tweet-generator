@@ -48,21 +48,74 @@
           <input type="date" id="date" />
         </div>
         <div class="form-control">
-          <label for="retweets">Retweets</label>
+          <label for="client">Client</label>
+          <input type="text" id="client" />
+          <small
+            >Twitter for iPhone, Twitter for Android, Twitter Web App,
+            etc.</small
+          >
+        </div>
+        <div class="form-control">
+          <label for="retweets">Retweets Count</label>
           <input type="number" id="retweets" />
         </div>
         <div class="form-control">
-          <label for="quotes">Quote Tweets</label>
+          <label for="quotes">Quote Tweets Count</label>
           <input type="number" id="quotes" />
         </div>
         <div class="form-control">
-          <label for="likes">Likes</label>
+          <label for="likes">Likes Count</label>
           <input type="number" id="likes" />
+        </div>
+        <div class="form-control">
+          <p>Theme</p>
+          <div class="group">
+            <label class="radio_container"
+              >Light
+              <input
+                type="radio"
+                name="theme_radio"
+                value="light"
+                checked="checked"
+              />
+              <span class="radio_mark"></span>
+            </label>
+            <label class="radio_container"
+              >Dim
+              <input type="radio" name="theme_radio" value="dim" />
+              <span class="radio_mark"></span>
+            </label>
+            <label class="radio_container"
+              >Dark
+              <input type="radio" name="theme_radio" value="dark" />
+              <span class="radio_mark"></span>
+            </label>
+          </div>
+        </div>
+        <div class="form-control">
+          <p>Verified Badge</p>
+          <div class="group">
+            <label class="radio_container"
+              >Show
+              <input type="radio" name="verified_radio" value="show" />
+              <span class="radio_mark"></span>
+            </label>
+            <label class="radio_container"
+              >Hide
+              <input
+                type="radio"
+                name="verified_radio"
+                value="hide"
+                checked="checked"
+              />
+              <span class="radio_mark"></span>
+            </label>
+          </div>
         </div>
       </div>
       <div class="tweet-desk">
         <h2>Preview</h2>
-        <div class="tweet">
+        <div id="tweet" class="tweet">
           <div class="head">
             <div class="title">
               <img
@@ -75,7 +128,8 @@
                 <p id="tweet_name">
                   Name
                   <img
-                    class="verified"
+                    id="tweet_verified"
+                    class="verified hide"
                     src="./assets/verified.svg"
                     alt="verified"
                   />
@@ -108,7 +162,7 @@
                 <span>4:38 AM</span> &centerdot;
                 <span>Jul 7, 2021</span> &centerdot;
               </div>
-              <div>&nbsp;Twitter for iPhone</div>
+              <div>&nbsp;<span id="tweet_client">Twitter Web App</span></div>
             </div>
           </div>
           <div class="stats">

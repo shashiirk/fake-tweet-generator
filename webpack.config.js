@@ -35,10 +35,10 @@ module.exports = {
   ],
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
-    hot: true,
+    // hot: true,
     open: true,
   },
   output: {
-    clean: true,
+    // clean: true,
   },
 };
