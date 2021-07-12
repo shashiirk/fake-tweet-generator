@@ -1,3 +1,5 @@
+import html2canvas from 'html2canvas';
+
 import './index.scss';
 
 // User input's DOM elements
@@ -26,6 +28,9 @@ const tweetClient = document.getElementById('tweet_client');
 const tweetRetweets = document.getElementById('tweet_retweets');
 const tweetQuotes = document.getElementById('tweet_quotes');
 const tweetLikes = document.getElementById('tweet_likes');
+
+// Capturing Download button
+const download = document.getElementById('download');
 
 // Month names
 const MONTHS = [
@@ -226,7 +231,7 @@ function setTimestamp() {
   const day = dateObj.getDate();
   const month = ('00' + (dateObj.getMonth() + 1)).slice(-2);
   const year = dateObj.getFullYear();
-  const hours = dateObj.getHours();
+  const hours = ('00' + dateObj.getHours()).slice(-2);
   const minutes = ('00' + dateObj.getMinutes()).slice(-2);
 
   time.value = `${hours}:${minutes}`;
@@ -235,6 +240,7 @@ function setTimestamp() {
   renderTimestamp();
 }
 
+// Set Theme
 function toggleTheme(ev) {
   const choice = ev.target.value;
 
@@ -247,6 +253,7 @@ function toggleTheme(ev) {
   }
 }
 
+// Toggle Verified Badge
 function toggleVerified(ev) {
   const choice = ev.target.value;
 
@@ -255,6 +262,43 @@ function toggleVerified(ev) {
   } else {
     tweetVerified.classList.add('hide');
   }
+}
+
+// Generate filenames for the image which is to be downloaded
+function generateFileName() {
+  return `tweet${Math.floor(Math.random() * 90000) + 10000}`;
+}
+
+// Download it to the local machine
+function saveAs(uri, filename) {
+  const link = document.createElement('a');
+
+  if (typeof link.download === 'string') {
+    link.href = uri;
+    link.download = filename;
+
+    //Firefox requires the link to be in the body
+    document.body.appendChild(link);
+
+    //simulate click
+    link.click();
+
+    //remove the link when done
+    document.body.removeChild(link);
+  } else {
+    window.open(uri);
+  }
+}
+
+// Take screenshot of the tweet
+function takeScreenshot() {
+  html2canvas(document.querySelector('.tweet'), {
+    scrollX: 0,
+    scrollY: 0,
+  }).then((canvas) => {
+    document.querySelector('.shot').appendChild(canvas);
+    saveAs(canvas.toDataURL(), generateFileName());
+  });
 }
 
 // On load
@@ -270,6 +314,7 @@ client.addEventListener('input', renderClient);
 retweets.addEventListener('input', renderRetweets);
 quotes.addEventListener('input', renderQuotes);
 likes.addEventListener('input', renderLikes);
+download.addEventListener('click', takeScreenshot);
 
 for (let i = 0; i < themeRadios.length; i++) {
   themeRadios[i].addEventListener('change', toggleTheme);

@@ -1,22 +1,23 @@
 $blue: #1da1f2;
+$hover-blue: #1a90d9;
 $black: #0f1419;
 $light-gray: #aab8c2;
 $extra-light-gray: #cbd5e1;
 $extra-extra-light-gray: #f5f8fa;
 $hint: #8c9094;
 $theme-light: #ffffff;
-$theme-light-gray-text: #aab8c2;
-$theme-light-icon: #aab8c2;
+$theme-light-gray-text: #536471;
+$theme-light-icon: #536471;
 $theme-light-border: #eff3f4;
 $theme-dim: #15202b;
 $theme-dim-gray-text: #798a96;
 $theme-dim-border: #38444d;
 $theme-dim-icon: #8899a6;
 $theme-dark: #000000;
-$theme-dark-white-text: white;
-$theme-dark-gray-text: #798a96;
-$theme-dark-border: #38444d;
-$theme-dark-icon: #8899a6;
+$theme-dark-white-text: #d9d9d9;
+$theme-dark-gray-text: #6e767d;
+$theme-dark-border: #2f3336;
+$theme-dark-icon: #6e767d;
 $bg: #f8fafc;
 $font-stack: 'Roboto', sans-serif;
 
@@ -249,11 +250,14 @@ main {
     h2 {
       font-size: 22px;
       font-weight: 600;
-      margin-bottom: 32px;
+    }
+
+    .tweet-box {
+      border: 1px $theme-light-border solid;
+      margin: 32px 0;
     }
 
     .tweet {
-      border: 1px $theme-light-border solid;
       padding: 0 16px;
       font-size: 15px;
 
@@ -281,6 +285,7 @@ main {
               .verified {
                 margin-left: 2px;
                 font-weight: 400;
+                color: $blue;
 
                 &.hide {
                   display: none;
@@ -348,9 +353,15 @@ main {
         color: white;
 
         .head {
-          .title .text p:nth-child(2),
-          .dots {
-            color: $theme-dim-gray-text;
+          .title .text {
+            p:first-child .verified {
+              color: white;
+            }
+
+            p:nth-child(2),
+            .dots {
+              color: $theme-dim-gray-text;
+            }
           }
         }
 
@@ -381,9 +392,15 @@ main {
         color: $theme-dark-white-text;
 
         .head {
-          .title .text p:nth-child(2),
-          .dots {
-            color: $theme-dark-gray-text;
+          .title .text {
+            p:first-child .verified {
+              color: $theme-dark-white-text;
+            }
+
+            p:nth-child(2),
+            .dots {
+              color: $theme-dark-gray-text;
+            }
           }
         }
 
@@ -406,6 +423,36 @@ main {
           svg {
             color: $theme-dark-gray-text;
           }
+        }
+      }
+    }
+
+    .btn {
+      display: block;
+      border: none;
+      border-radius: 6px;
+      border-radius: 99px;
+      background-color: $blue;
+      color: white;
+      font: inherit;
+      margin: auto;
+      padding: 11px 33px;
+      cursor: pointer;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+
+      @media (hover: hover) {
+        & {
+          transition: background 200ms ease-in;
+        }
+
+        &:hover {
+          background-color: $hover-blue;
+        }
+      }
+
+      @media (hover: none) {
+        &:active {
+          background-color: $hover-blue;
         }
       }
     }
