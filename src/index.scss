@@ -1,9 +1,10 @@
 $blue: #1da1f2;
 $hover-blue: #1a90d9;
+$hover-gray: #e6e8eb;
 $black: #0f1419;
 $light-gray: #aab8c2;
 $extra-light-gray: #cbd5e1;
-$extra-extra-light-gray: #f5f8fa;
+$extra-extra-light-gray: #eef3f7;
 $hint: #8c9094;
 $theme-light: #ffffff;
 $theme-light-gray-text: #536471;
@@ -237,6 +238,94 @@ main {
           background: white;
         }
       }
+
+      &.upload {
+        margin-bottom: 42px;
+        display: flex;
+        position: relative;
+
+        label {
+          display: inline-block;
+          position: relative;
+          border-radius: 99px;
+          background-color: $blue;
+          color: #fff;
+          font-weight: 400;
+          padding: 10px 30px;
+          cursor: pointer;
+
+          @media (hover: hover) {
+            & {
+              transition: background 200ms ease-in;
+            }
+
+            &:hover {
+              background-color: $hover-blue;
+            }
+          }
+
+          @media (hover: none) {
+            &:active {
+              background-color: $hover-blue;
+            }
+          }
+        }
+
+        .file {
+          opacity: 0;
+          width: 0;
+          height: 0;
+          position: absolute;
+          top: 0;
+          left: 0;
+          cursor: pointer;
+          z-index: -10;
+        }
+
+        .file-name {
+          font-size: 13px;
+          font-weight: 400;
+          color: $hint;
+          position: absolute;
+          bottom: -29px;
+          background-color: $extra-extra-light-gray;
+          color: $black;
+          border-radius: 99px;
+          padding: 4px 16px;
+          display: none;
+
+          &.show {
+            display: block;
+          }
+        }
+
+        .reset {
+          border: 1px $blue solid;
+          border-radius: 99px;
+          background-color: white;
+          color: $blue;
+          font: inherit;
+          cursor: pointer;
+          padding: 10px 30px;
+          margin-left: 12px;
+
+          @media (hover: hover) {
+            & {
+              transition: background 200ms ease-in;
+            }
+
+            &:hover {
+              background-color: $hover-gray;
+            }
+          }
+
+          @media (hover: none) {
+            &:active {
+              background-color: $hover-gray;
+            }
+          }
+        }
+      }
     }
   }
 
@@ -258,6 +347,7 @@ main {
     }
 
     .tweet {
+      border: 1px transparent solid;
       padding: 0 16px;
       font-size: 15px;
 
@@ -438,7 +528,6 @@ main {
       margin: auto;
       padding: 11px 33px;
       cursor: pointer;
-      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 
       @media (hover: hover) {
         & {

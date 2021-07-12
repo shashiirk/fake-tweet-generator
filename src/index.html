@@ -21,6 +21,18 @@
     <main>
       <div class="form">
         <h2>Details</h2>
+        <div class="form-control upload">
+          <label for="avatar"
+            >Upload Profile Picture<input
+              type="file"
+              class="file"
+              id="avatar"
+              name="avatar"
+              accept="image/png, image/jpeg"
+          /></label>
+          <p id="file-name" class="file-name"></p>
+          <button id="reset" class="reset" type="button">Reset</button>
+        </div>
         <div class="form-control">
           <label for="name">Name</label>
           <input type="text" id="name" />
@@ -120,6 +132,7 @@
             <div class="head">
               <div class="title">
                 <img
+                  id="tweet_avatar"
                   src="./assets/silhoutte.png"
                   alt="avatar"
                   width="48"
@@ -247,7 +260,6 @@
         <button id="download" class="btn" type="button">Download</button>
       </div>
     </main>
-    <div class="shot"></div>
     <footer>
       <p class="foot">
         Built by

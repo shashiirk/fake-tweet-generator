@@ -1,8 +1,12 @@
 import html2canvas from 'html2canvas';
 
 import './index.scss';
+import img from './assets/silhoutte.png';
 
 // User input's DOM elements
+const avatar = document.getElementById('avatar');
+const fileName = document.getElementById('file-name');
+const reset = document.getElementById('reset');
 const name = document.getElementById('name');
 const username = document.getElementById('username');
 const message = document.getElementById('message');
@@ -19,6 +23,7 @@ const verifiedRadios = document.getElementsByName('verified_radio');
 
 // Preview's DOM elements
 const tweet = document.getElementById('tweet');
+const tweetAvatar = document.getElementById('tweet_avatar');
 const tweetName = document.getElementById('tweet_name');
 const tweetVerified = document.getElementById('tweet_verified');
 const tweetUsername = document.getElementById('tweet_username');
@@ -72,6 +77,28 @@ function numberFormatter(num, fixed) {
     e = d + ['', 'K', 'M', 'B', 'T'][k]; // append power
 
   return e;
+}
+
+// Show the uploaded file's name
+function showFileName(name) {
+  fileName.classList.add('show');
+  fileName.innerText = name;
+}
+
+// Render Profile Picture in Tweet
+function renderProfilePicture() {
+  const [file] = avatar.files;
+  if (file) {
+    showFileName(file.name);
+    tweetAvatar.src = URL.createObjectURL(file);
+  }
+}
+
+// Reset the profile picture to default
+function resetProfilePicture() {
+  fileName.innerText = '';
+  fileName.classList.remove('show');
+  tweetAvatar.src = img;
 }
 
 // Render Name in Tweet
@@ -293,10 +320,11 @@ function saveAs(uri, filename) {
 // Take screenshot of the tweet
 function takeScreenshot() {
   html2canvas(document.querySelector('.tweet'), {
+    allowTaint: true,
+    useCORS: true,
     scrollX: 0,
     scrollY: 0,
   }).then((canvas) => {
-    document.querySelector('.shot').appendChild(canvas);
     saveAs(canvas.toDataURL(), generateFileName());
   });
 }
@@ -305,6 +333,8 @@ function takeScreenshot() {
 setTimestamp();
 
 // Event Listeners
+avatar.addEventListener('change', renderProfilePicture);
+reset.addEventListener('click', resetProfilePicture);
 name.addEventListener('input', renderName);
 username.addEventListener('input', renderUsername);
 message.addEventListener('input', renderMessage);
