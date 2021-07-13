@@ -319,11 +319,10 @@ function saveAs(uri, filename) {
 
 // Take screenshot of the tweet
 function takeScreenshot() {
+  window.scrollTo(0, 0);
   html2canvas(document.querySelector('.tweet'), {
     allowTaint: true,
     useCORS: true,
-    scrollX: 0,
-    scrollY: 0,
   }).then((canvas) => {
     saveAs(canvas.toDataURL(), generateFileName());
   });
