@@ -61,6 +61,18 @@ header {
   h1 {
     font-size: 48px;
     font-weight: 700;
+
+    @media (max-width: 640px) {
+      & {
+        font-size: 38px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      & {
+        font-size: 32px;
+      }
+    }
   }
 }
 
@@ -79,8 +91,7 @@ main {
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     border-radius: 8px;
     padding: 24px;
-    width: 100%;
-    margin-right: 16px;
+    flex: 1;
 
     h2 {
       font-size: 22px;
@@ -253,6 +264,7 @@ main {
           font-weight: 400;
           padding: 10px 30px;
           cursor: pointer;
+          box-shadow: 0 2px 12px rgba(0, 0, 0, 0.24);
 
           @media (hover: hover) {
             & {
@@ -285,7 +297,6 @@ main {
         .file-name {
           font-size: 13px;
           font-weight: 400;
-          color: $hint;
           position: absolute;
           bottom: -29px;
           background-color: $extra-extra-light-gray;
@@ -308,6 +319,7 @@ main {
           cursor: pointer;
           padding: 10px 30px;
           margin-left: 12px;
+          box-shadow: 0 1px 8px rgba(0, 0, 0, 0.12);
 
           @media (hover: hover) {
             & {
@@ -327,6 +339,38 @@ main {
         }
       }
     }
+
+    @media (max-width: 890px) {
+      & {
+        width: 75%;
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 700px) {
+      & {
+        width: 85%;
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 640px) {
+      & {
+        width: 95%;
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 520px) {
+      & {
+        width: 100%;
+        margin: 0 auto;
+        background-color: transparent;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 24px 0;
+      }
+    }
   }
 
   .tweet-desk {
@@ -334,7 +378,7 @@ main {
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     border-radius: 8px;
     padding: 24px;
-    width: 100%;
+    margin-left: 16px;
 
     h2 {
       font-size: 22px;
@@ -344,12 +388,28 @@ main {
     .tweet-box {
       border: 1px $theme-light-border solid;
       margin: 32px 0;
+      width: 440px;
+
+      @media (max-width: 940px) {
+        & {
+          width: 400px;
+        }
+      }
+
+      @media (max-width: 890px) {
+        & {
+          max-width: 440px;
+          width: 100%;
+          margin: 32px auto;
+        }
+      }
     }
 
     .tweet {
       border: 1px transparent solid;
       padding: 0 16px;
       font-size: 15px;
+      width: 100%;
 
       .head {
         padding-top: 12px;
@@ -364,6 +424,10 @@ main {
             display: inline-block;
             border-radius: 50%;
             margin-right: 12px;
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: optimize-contrast;
           }
 
           .text {
@@ -412,6 +476,7 @@ main {
         color: $theme-light-gray-text;
         padding: 16px 4px;
         display: flex;
+        flex-wrap: wrap;
 
         .stat {
           margin-right: 24px;
@@ -423,6 +488,12 @@ main {
 
           &.hide {
             display: none;
+          }
+
+          @media (max-width: 520px) {
+            & {
+              margin-right: 12px;
+            }
           }
         }
       }
@@ -528,6 +599,7 @@ main {
       margin: auto;
       padding: 11px 33px;
       cursor: pointer;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.24);
 
       @media (hover: hover) {
         & {
@@ -544,6 +616,50 @@ main {
           background-color: $hover-blue;
         }
       }
+    }
+
+    @media (max-width: 890px) {
+      & {
+        width: 75%;
+        margin: 0 auto 16px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      & {
+        width: 85%;
+        margin: 0 auto 16px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      & {
+        width: 95%;
+        margin: 0 auto 16px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      & {
+        width: 100%;
+        margin: 0 auto 16px;
+        background-color: transparent;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 24px 0;
+      }
+    }
+  }
+
+  @media (max-width: 890px) {
+    & {
+      flex-direction: column-reverse;
+    }
+  }
+
+  @media (max-width: 520px) {
+    & {
+      padding: 16px;
     }
   }
 }
