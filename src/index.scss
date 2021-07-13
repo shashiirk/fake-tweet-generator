@@ -365,7 +365,7 @@ main {
       & {
         width: 100%;
         margin: 0 auto;
-        background-color: transparent;
+        background-color: $bg;
         box-shadow: none;
         border-radius: 0;
         padding: 24px 0;
@@ -379,6 +379,9 @@ main {
     border-radius: 8px;
     padding: 24px;
     margin-left: 16px;
+    position: sticky;
+    top: 16px;
+    z-index: 10;
 
     h2 {
       font-size: 22px;
@@ -407,6 +410,7 @@ main {
 
     .tweet {
       border: 1px transparent solid;
+      background-color: white;
       padding: 0 16px;
       font-size: 15px;
       width: 100%;
@@ -528,6 +532,10 @@ main {
 
         .content .tweet_info {
           color: $theme-dim-gray-text;
+
+          div .tweet_client {
+            color: $blue;
+          }
         }
 
         .stats {
@@ -567,6 +575,10 @@ main {
 
         .content .tweet_info {
           color: $theme-dark-gray-text;
+
+          div .tweet_client {
+            color: $blue;
+          }
         }
 
         .stats {
@@ -622,6 +634,7 @@ main {
       & {
         width: 75%;
         margin: 0 auto 16px;
+        position: static;
       }
     }
 
@@ -643,7 +656,7 @@ main {
       & {
         width: 100%;
         margin: 0 auto 16px;
-        background-color: transparent;
+        background-color: $bg;
         box-shadow: none;
         border-radius: 0;
         padding: 24px 0;
