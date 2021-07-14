@@ -323,6 +323,7 @@ function takeScreenshot() {
   html2canvas(document.querySelector('.tweet'), {
     allowTaint: true,
     useCORS: true,
+    scrollY: -window.scrollY,
   }).then((canvas) => {
     saveAs(canvas.toDataURL(), generateFileName());
   });
