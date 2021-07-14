@@ -3,46 +3,7 @@
   "version": "1.0.0",
   "description": "With the Fake Tweet Generator tool you can create convincing fake tweet images. This tool is completely customizable so you can choose any name, any content, any time, any number of likes and many more.",
   "private": true,
-  "homepage": "https://shashiirk.github.io/fake-tweet-generator",
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
-    "build": "webpack --mode production",
-    "start": "webpack serve --mode development"
-  },
+  "scripts": {},
   "author": "Shashikanth Reddy",
-  "license": "ISC",
-  "devDependencies": {
-    "@babel/core": "^7.14.6",
-    "@babel/preset-env": "^7.14.7",
-    "autoprefixer": "^10.3.1",
-    "babel-loader": "^8.2.2",
-    "css-loader": "^5.2.6",
-    "favicons": "^6.2.2",
-    "favicons-webpack-plugin": "^5.0.2",
-    "gh-pages": "^3.2.3",
-    "html-loader": "^2.1.2",
-    "html-webpack-plugin": "^5.3.2",
-    "postcss-loader": "^6.1.1",
-    "sass": "^1.35.1",
-    "sass-loader": "^12.1.0",
-    "style-loader": "^3.0.0",
-    "webpack": "^5.42.0",
-    "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^3.11.2"
-  },
-  "dependencies": {
-    "html2canvas": "^1.1.0",
-    "sharp": "^0.28.3"
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
-  },
-  "browserslist": [
-    "last 2 version",
-    "not dead",
-    "iOS >= 9"
-  ]
+  "license": "ISC"
 }
