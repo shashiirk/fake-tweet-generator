@@ -1,5 +1,5 @@
 {
-  "name": "fake-tweet",
+  "name": "fake-tweet-generator",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -12,10 +12,14 @@
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "@babel/preset-env": "^7.14.7",
+    "autoprefixer": "^10.3.1",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.2.6",
+    "favicons": "^6.2.2",
+    "favicons-webpack-plugin": "^5.0.2",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.2",
+    "postcss-loader": "^6.1.1",
     "sass": "^1.35.1",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.0.0",
@@ -24,6 +28,17 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-    "html2canvas": "^1.1.0"
-  }
+    "html2canvas": "^1.1.0",
+    "sharp": "^0.28.3"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "last 2 version",
+    "not dead",
+    "iOS >= 9"
+  ]
 }
