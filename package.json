@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "With the Fake Tweet Generator tool you can create convincing fake tweet images. This tool is completely customizable so you can choose any name, any content, any time, any number of likes and many more.",
   "private": true,
+  "homepage": "https://shashiirk.github.io/fake-tweet-generator",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "webpack --mode production",
     "start": "webpack serve --mode development"
   },
