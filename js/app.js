@@ -283,13 +283,13 @@ function toggleTheme(ev) {
 
   if (choice === 'dim') {
     tweet.className = 'tweet dim';
-    tweetBox.classList.add('hide');
+    tweetBox.className = 'tweet_box dim';
   } else if (choice === 'dark') {
     tweet.className = 'tweet dark';
-    tweetBox.classList.add('hide');
+    tweetBox.className = 'tweet_box dark';
   } else {
     tweet.className = 'tweet';
-    tweetBox.classList.remove('hide');
+    tweetBox.className = 'tweet_box';
   }
 }
 
@@ -342,7 +342,10 @@ function takeScreenshot() {
   html2canvas(document.querySelector('.tweet'), {
     allowTaint: true,
     useCORS: true,
+    scrollX: -window.scrollX,
     scrollY: -window.scrollY,
+    windowWidth: document.documentElement.offsetWidth,
+    windowHeight: document.documentElement.offsetHeight,
   }).then((canvas) => {
     saveAs(canvas.toDataURL(), generateFileName());
   });
