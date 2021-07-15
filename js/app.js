@@ -2,7 +2,7 @@
 const avatar = document.getElementById('avatar');
 const fileName = document.getElementById('file-name');
 const reset = document.getElementById('reset');
-const name = document.getElementById('name');
+const fullname = document.getElementById('name');
 const username = document.getElementById('username');
 const message = document.getElementById('message');
 const time = document.getElementById('time');
@@ -23,7 +23,8 @@ const tweetName = document.getElementById('tweet_name');
 const tweetVerified = document.getElementById('tweet_verified');
 const tweetUsername = document.getElementById('tweet_username');
 const tweetMessage = document.getElementById('tweet_message');
-const tweetTimestamp = document.getElementById('tweet_timestamp');
+const tweetTime = document.getElementById('tweet_time');
+const tweetDate = document.getElementById('tweet_date');
 const tweetClient = document.getElementById('tweet_client');
 const tweetRetweets = document.getElementById('tweet_retweets');
 const tweetQuotes = document.getElementById('tweet_quotes');
@@ -139,38 +140,26 @@ function renderMessage() {
   characterCountEl.innerText = messageValue.length;
 }
 
-// Render Timestamp in Tweet
-function renderTimestamp() {
-  // Time
+// Render Time in Tweet
+function renderTime() {
   const timeValue = time.value.trim();
-  let [hours, minutes] = timeValue.split(':');
-  hours = +hours;
-  minutes = ('00' + minutes).slice(-2);
-  let suffix;
 
-  if (hours > 12) {
-    hours = hours - 12;
-    suffix = 'PM';
+  if (timeValue === '') {
+    tweetTime.innerText = getCurrentTime();
   } else {
-    if (hours === 0) {
-      hours = 12;
-      suffix = 'AM';
-    } else if (hours === 12) {
-      suffix = 'PM';
-    } else {
-      suffix = 'AM';
-    }
+    tweetTime.innerText = timeValue;
   }
+}
 
-  // Date
+// Render Date in Tweet
+function renderDate() {
   const dateValue = date.value.trim();
-  let [year, month, day] = dateValue.split('-');
-  month = MONTHS[+month - 1];
 
-  tweetTimestamp.innerHTML = `
-    <span>${hours}:${minutes} ${suffix}</span> &centerdot;
-    <span>${month} ${day}, ${year}</span> &centerdot;
-  `;
+  if (dateValue === '') {
+    tweetDate.innerText = getCurrentDate();
+  } else {
+    tweetDate.innerText = dateValue;
+  }
 }
 
 // Render Client in Tweet
@@ -247,24 +236,49 @@ function renderLikes() {
   }
 }
 
-// Set Timestamp when page is loaded
-function setTimestamp() {
+// Returns current Time
+function getCurrentTime() {
+  const dateObj = new Date();
+  let hours = +dateObj.getHours();
+  let minutes = ('00' + dateObj.getMinutes()).slice(-2);
+  let suffix;
+
+  if (hours > 12) {
+    hours = hours - 12;
+    suffix = 'PM';
+  } else {
+    if (hours === 0) {
+      hours = 12;
+      suffix = 'AM';
+    } else if (hours === 12) {
+      suffix = 'PM';
+    } else {
+      suffix = 'AM';
+    }
+  }
+
+  return `${hours}:${minutes} ${suffix}`;
+}
+
+// Returns current Date
+function getCurrentDate() {
   const dateObj = new Date();
   const day = dateObj.getDate();
-  const month = ('00' + (dateObj.getMonth() + 1)).slice(-2);
+  const month = dateObj.getMonth();
   const year = dateObj.getFullYear();
-  const hours = ('00' + dateObj.getHours()).slice(-2);
-  const minutes = ('00' + dateObj.getMinutes()).slice(-2);
 
-  time.value = `${hours}:${minutes}`;
-  date.value = `${year}-${month}-${day}`;
-
-  renderTimestamp();
+  return `${MONTHS[month]} ${day}, ${year}`;
 }
 
 // Set Theme
 function toggleTheme(ev) {
-  const choice = ev.target.value;
+  let choice;
+
+  for (let i = 0; i < themeRadios.length; i++) {
+    if (themeRadios[i].checked) {
+      choice = themeRadios[i].value;
+    }
+  }
 
   if (choice === 'dim') {
     tweet.className = 'tweet dim';
@@ -277,7 +291,13 @@ function toggleTheme(ev) {
 
 // Toggle Verified Badge
 function toggleVerified(ev) {
-  const choice = ev.target.value;
+  let choice;
+
+  for (let i = 0; i < verifiedRadios.length; i++) {
+    if (verifiedRadios[i].checked) {
+      choice = verifiedRadios[i].value;
+    }
+  }
 
   if (choice === 'show') {
     tweetVerified.classList.remove('hide');
@@ -324,17 +344,23 @@ function takeScreenshot() {
   });
 }
 
+// Set Timestamp when page is loaded
+function setTimestamp() {
+  renderTime();
+  renderDate();
+}
+
 // On load
 setTimestamp();
 
 // Event Listeners
 avatar.addEventListener('change', renderProfilePicture);
 reset.addEventListener('click', resetProfilePicture);
-name.addEventListener('input', renderName);
+fullname.addEventListener('input', renderName);
 username.addEventListener('input', renderUsername);
 message.addEventListener('input', renderMessage);
-time.addEventListener('input', renderTimestamp);
-date.addEventListener('input', renderTimestamp);
+time.addEventListener('input', renderTime);
+date.addEventListener('input', renderDate);
 client.addEventListener('input', renderClient);
 retweets.addEventListener('input', renderRetweets);
 quotes.addEventListener('input', renderQuotes);

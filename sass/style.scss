@@ -220,6 +220,7 @@ main {
           width: 16px;
           border: 1px $light-gray solid;
           border-radius: 50%;
+          background-color: white;
         }
 
         .radio_container input:focus ~ .radio_mark {
@@ -362,6 +363,7 @@ main {
 
     @media (max-width: 520px) {
       & {
+        background-color: $bg;
         width: 100%;
         margin: 0 auto;
         box-shadow: none;
@@ -652,6 +654,7 @@ main {
 
     @media (max-width: 520px) {
       & {
+        background-color: $bg;
         width: 100%;
         margin: 0 auto 16px;
         box-shadow: none;

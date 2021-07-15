@@ -176,6 +176,7 @@ main .form .form-control .group .radio_mark {
   width: 16px;
   border: 1px #aab8c2 solid;
   border-radius: 50%;
+  background-color: white;
 }
 main .form .form-control .group .radio_container input:focus ~ .radio_mark {
   box-shadow: 0 0 0 3px rgba(29, 161, 242, 0.4);
@@ -295,6 +296,7 @@ main .form .form-control.upload .reset {
 }
 @media (max-width: 520px) {
   main .form {
+    background-color: #f7f8f9;
     width: 100%;
     margin: 0 auto;
     box-shadow: none;
@@ -524,6 +526,7 @@ main .tweet-desk .btn {
 }
 @media (max-width: 520px) {
   main .tweet-desk {
+    background-color: #f7f8f9;
     width: 100%;
     margin: 0 auto 16px;
     box-shadow: none;
