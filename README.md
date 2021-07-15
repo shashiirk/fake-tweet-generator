@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://shashiirk.github.io/fake-tweet-generator">
-    <img alt="logo" src="src/assets/logo.svg" width="60" />
+    <img alt="logo" src="assets/logo.svg" width="60" />
   </a>
 </p>
 <h1 align="center">
