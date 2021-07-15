@@ -322,11 +322,17 @@ main .tweet-desk h2 {
 }
 main .tweet-desk .tweet_box {
   border: 1px #eff3f4 solid;
+  background-color: white;
   margin: 32px 0 34px;
   width: 440px;
 }
-main .tweet-desk .tweet_box.hide {
-  border: 1px transparent solid;
+main .tweet-desk .tweet_box.dim {
+  border: 1px #15202b solid;
+  background-color: #15202b;
+}
+main .tweet-desk .tweet_box.dark {
+  border: 1px #000000 solid;
+  background-color: #000000;
 }
 @media (max-width: 940px) {
   main .tweet-desk .tweet_box {

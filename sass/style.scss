@@ -392,11 +392,18 @@ main {
 
     .tweet_box {
       border: 1px $theme-light-border solid;
+      background-color: white;
       margin: 32px 0 34px;
       width: 440px;
 
-      &.hide {
-        border: 1px transparent solid;
+      &.dim {
+        border: 1px $theme-dim solid;
+        background-color: $theme-dim;
+      }
+
+      &.dark {
+        border: 1px $theme-dark solid;
+        background-color: $theme-dark;
       }
 
       @media (max-width: 940px) {
