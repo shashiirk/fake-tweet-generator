@@ -109,6 +109,7 @@ main .form .form-control small {
 }
 main .form .form-control .username_input {
   display: block;
+  background-color: white;
   color: #8c9094;
   font: inherit;
   width: 100%;
