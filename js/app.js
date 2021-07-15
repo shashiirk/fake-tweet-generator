@@ -99,7 +99,7 @@ function resetProfilePicture() {
 
 // Render Name in Tweet
 function renderName() {
-  const nameValue = name.value.trim();
+  const nameValue = fullname.value.trim();
 
   if (nameValue === '') {
     tweetName.innerText = 'Name';
@@ -107,7 +107,7 @@ function renderName() {
     tweetName.innerText = nameValue;
   }
 
-  const characterCountEl = name.nextElementSibling.querySelector('.count');
+  const characterCountEl = fullname.nextElementSibling.querySelector('.count');
   characterCountEl.innerText = nameValue.length;
 }
 
