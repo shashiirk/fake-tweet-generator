@@ -50,6 +50,9 @@ const MONTHS = [
   'Dec',
 ];
 
+// Theme
+let themeColor = '#ffffff';
+
 // Number Formatter for Retweets, Quote Tweets and Likes
 function numberFormatter(num, fixed) {
   // terminate early
@@ -284,17 +287,20 @@ function toggleTheme(ev) {
   if (choice === 'dim') {
     tweet.className = 'tweet dim';
     tweetBox.className = 'tweet_box dim';
+    themeColor = '#15202b';
   } else if (choice === 'dark') {
     tweet.className = 'tweet dark';
     tweetBox.className = 'tweet_box dark';
+    themeColor = '#000000';
   } else {
     tweet.className = 'tweet';
     tweetBox.className = 'tweet_box';
+    themeColor = '#ffffff';
   }
 }
 
 // Toggle Verified Badge
-function toggleVerified(ev) {
+function toggleVerified() {
   let choice;
 
   for (let i = 0; i < verifiedRadios.length; i++) {
@@ -341,7 +347,7 @@ function takeScreenshot() {
   window.scrollTo(0, 0);
   html2canvas(document.querySelector('.tweet'), {
     allowTaint: true,
-    backgroundColor: null,
+    backgroundColor: themeColor,
     useCORS: true,
     scrollX: -window.scrollX,
     scrollY: -window.scrollY,
