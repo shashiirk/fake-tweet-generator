@@ -17,6 +17,7 @@ const themeRadios = document.getElementsByName('theme_radio');
 const verifiedRadios = document.getElementsByName('verified_radio');
 
 // Preview's DOM elements
+const tweetBox = document.getElementById('tweet_box');
 const tweet = document.getElementById('tweet');
 const tweetAvatar = document.getElementById('tweet_avatar');
 const tweetName = document.getElementById('tweet_name');
@@ -282,10 +283,13 @@ function toggleTheme(ev) {
 
   if (choice === 'dim') {
     tweet.className = 'tweet dim';
+    tweetBox.classList.add('hide');
   } else if (choice === 'dark') {
     tweet.className = 'tweet dark';
+    tweetBox.classList.add('hide');
   } else {
     tweet.className = 'tweet';
+    tweetBox.classList.remove('hide');
   }
 }
 

@@ -320,18 +320,21 @@ main .tweet-desk h2 {
   font-size: 22px;
   font-weight: 500;
 }
-main .tweet-desk .tweet-box {
+main .tweet-desk .tweet_box {
   border: 1px #eff3f4 solid;
   margin: 32px 0 34px;
   width: 440px;
 }
+main .tweet-desk .tweet_box.hide {
+  border: 1px transparent solid;
+}
 @media (max-width: 940px) {
-  main .tweet-desk .tweet-box {
+  main .tweet-desk .tweet_box {
     width: 400px;
   }
 }
 @media (max-width: 890px) {
-  main .tweet-desk .tweet-box {
+  main .tweet-desk .tweet_box {
     max-width: 440px;
     width: 100%;
     margin: 32px auto;
@@ -343,6 +346,12 @@ main .tweet-desk .tweet {
   padding: 0 16px;
   font-size: 15px;
   width: 100%;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 main .tweet-desk .tweet .head {
   padding-top: 12px;

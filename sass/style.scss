@@ -390,10 +390,14 @@ main {
       font-weight: 500;
     }
 
-    .tweet-box {
+    .tweet_box {
       border: 1px $theme-light-border solid;
       margin: 32px 0 34px;
       width: 440px;
+
+      &.hide {
+        border: 1px transparent solid;
+      }
 
       @media (max-width: 940px) {
         & {
@@ -416,6 +420,12 @@ main {
       padding: 0 16px;
       font-size: 15px;
       width: 100%;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
 
       .head {
         padding-top: 12px;
