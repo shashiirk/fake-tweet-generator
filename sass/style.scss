@@ -554,7 +554,7 @@ main {
         .content .tweet_info {
           color: $theme-dim-gray-text;
 
-          div .tweet_client {
+          .tweet_client {
             color: $blue;
           }
         }
@@ -597,7 +597,7 @@ main {
         .content .tweet_info {
           color: $theme-dark-gray-text;
 
-          div .tweet_client {
+          .tweet_client {
             color: $blue;
           }
         }

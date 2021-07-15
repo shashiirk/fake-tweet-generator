@@ -452,7 +452,7 @@ main .tweet-desk .tweet.dim .head .title .text .dots {
 main .tweet-desk .tweet.dim .content .tweet_info {
   color: #798a96;
 }
-main .tweet-desk .tweet.dim .content .tweet_info div .tweet_client {
+main .tweet-desk .tweet.dim .content .tweet_info .tweet_client {
   color: #1da1f2;
 }
 main .tweet-desk .tweet.dim .stats {
@@ -482,7 +482,7 @@ main .tweet-desk .tweet.dark .head .title .text .dots {
 main .tweet-desk .tweet.dark .content .tweet_info {
   color: #6e767d;
 }
-main .tweet-desk .tweet.dark .content .tweet_info div .tweet_client {
+main .tweet-desk .tweet.dark .content .tweet_info .tweet_client {
   color: #1da1f2;
 }
 main .tweet-desk .tweet.dark .stats {

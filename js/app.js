@@ -341,6 +341,7 @@ function takeScreenshot() {
   window.scrollTo(0, 0);
   html2canvas(document.querySelector('.tweet'), {
     allowTaint: true,
+    backgroundColor: null,
     useCORS: true,
     scrollX: -window.scrollX,
     scrollY: -window.scrollY,
