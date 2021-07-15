@@ -446,9 +446,10 @@ main {
                 margin-left: 2px;
                 font-weight: 400;
                 color: $blue;
+                visibility: visible;
 
                 &.hide {
-                  display: none;
+                  visibility: hidden;
                 }
               }
             }
@@ -468,6 +469,7 @@ main {
         .message {
           padding-top: 16px;
           font-size: 23px;
+          line-height: 28px;
         }
 
         .tweet_info {

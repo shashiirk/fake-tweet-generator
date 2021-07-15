@@ -371,9 +371,10 @@ main .tweet-desk .tweet .head .title .text p:first-child .verified {
   margin-left: 2px;
   font-weight: 400;
   color: #1da1f2;
+  visibility: visible;
 }
 main .tweet-desk .tweet .head .title .text p:first-child .verified.hide {
-  display: none;
+  visibility: hidden;
 }
 main .tweet-desk .tweet .head .title .text p:nth-child(2) {
   color: #536471;
@@ -384,6 +385,7 @@ main .tweet-desk .tweet .head .dots {
 main .tweet-desk .tweet .content .message {
   padding-top: 16px;
   font-size: 23px;
+  line-height: 28px;
 }
 main .tweet-desk .tweet .content .tweet_info {
   color: #536471;
