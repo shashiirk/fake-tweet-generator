@@ -1,8 +1,3 @@
-import html2canvas from 'html2canvas';
-
-import './index.scss';
-import img from './assets/silhoutte.png';
-
 // User input's DOM elements
 const avatar = document.getElementById('avatar');
 const fileName = document.getElementById('file-name');
@@ -98,7 +93,7 @@ function renderProfilePicture() {
 function resetProfilePicture() {
   fileName.innerText = '';
   fileName.classList.remove('show');
-  tweetAvatar.src = img;
+  tweetAvatar.src = 'assets/silhoutte.png';
 }
 
 // Render Name in Tweet

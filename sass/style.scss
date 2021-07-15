@@ -21,6 +21,7 @@ $theme-dark-white-text: #d9d9d9;
 $theme-dark-gray-text: #6e767d;
 $theme-dark-border: #2f3336;
 $theme-dark-icon: #6e767d;
+$bg: #f7f8f9;
 $font-stack: 'Roboto', sans-serif;
 
 * {
@@ -34,6 +35,7 @@ html {
 }
 
 body {
+  background-color: $bg;
   color: $black;
   min-height: 100vh;
   display: flex;
