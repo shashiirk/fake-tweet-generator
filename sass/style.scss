@@ -486,7 +486,6 @@ main {
         .message {
           padding-top: 16px;
           font-size: 23px;
-          line-height: 28px;
         }
 
         .tweet_info {
@@ -616,6 +615,24 @@ main {
 
           svg {
             color: $theme-dark-gray-text;
+          }
+        }
+      }
+
+      @media (max-width: 395px) {
+        & {
+          font-size: 14px;
+        }
+
+        .content .message {
+          font-size: 21px;
+        }
+
+        .stats {
+          padding: 16px 0;
+
+          .stat {
+            margin-right: 8px;
           }
         }
       }

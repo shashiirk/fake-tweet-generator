@@ -400,7 +400,6 @@ main .tweet-desk .tweet .head .dots {
 main .tweet-desk .tweet .content .message {
   padding-top: 16px;
   font-size: 23px;
-  line-height: 28px;
 }
 main .tweet-desk .tweet .content .tweet_info {
   color: #536471;
@@ -497,6 +496,20 @@ main .tweet-desk .tweet.dark .tail {
 }
 main .tweet-desk .tweet.dark .tail svg {
   color: #6e767d;
+}
+@media (max-width: 395px) {
+  main .tweet-desk .tweet {
+    font-size: 14px;
+  }
+  main .tweet-desk .tweet .content .message {
+    font-size: 21px;
+  }
+  main .tweet-desk .tweet .stats {
+    padding: 16px 0;
+  }
+  main .tweet-desk .tweet .stats .stat {
+    margin-right: 8px;
+  }
 }
 main .tweet-desk .btn {
   display: block;
