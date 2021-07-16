@@ -463,10 +463,9 @@ main {
                 margin-left: 2px;
                 font-weight: 400;
                 color: $blue;
-                visibility: visible;
 
                 &.hide {
-                  visibility: hidden;
+                  display: none;
                 }
               }
             }
