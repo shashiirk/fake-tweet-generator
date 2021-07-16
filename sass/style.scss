@@ -44,6 +44,10 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+.container {
+  display: block !important;
+}
+
 a {
   text-decoration: none;
   font: inherit;
