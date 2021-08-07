@@ -377,20 +377,22 @@ main .tweet-desk .tweet .head .title img {
   image-rendering: -webkit-optimize-contrast;
   image-rendering: optimize-contrast;
 }
-main .tweet-desk .tweet .head .title .text p:first-child {
+main .tweet-desk .tweet .head .title .text .top {
   font-weight: 700;
   display: flex;
   align-items: center;
 }
-main .tweet-desk .tweet .head .title .text p:first-child .verified {
-  margin-left: 2px;
+main .tweet-desk .tweet .head .title .text .top .tweet_name {
+  margin-right: 2px;
+}
+main .tweet-desk .tweet .head .title .text .top .verified {
   font-weight: 400;
   color: #1da1f2;
 }
-main .tweet-desk .tweet .head .title .text p:first-child .verified.hide {
+main .tweet-desk .tweet .head .title .text .top .verified.hide {
   display: none;
 }
-main .tweet-desk .tweet .head .title .text p:nth-child(2) {
+main .tweet-desk .tweet .head .title .text .bottom {
   color: #536471;
 }
 main .tweet-desk .tweet .head .dots {
@@ -440,10 +442,10 @@ main .tweet-desk .tweet.dim {
   background-color: #15202b;
   color: white;
 }
-main .tweet-desk .tweet.dim .head .title .text p:first-child .verified {
+main .tweet-desk .tweet.dim .head .title .text .top .verified {
   color: white;
 }
-main .tweet-desk .tweet.dim .head .title .text p:nth-child(2),
+main .tweet-desk .tweet.dim .head .title .text .bottom,
 main .tweet-desk .tweet.dim .head .title .text .dots {
   color: #798a96;
 }
@@ -470,10 +472,10 @@ main .tweet-desk .tweet.dark {
   background-color: #000000;
   color: #d9d9d9;
 }
-main .tweet-desk .tweet.dark .head .title .text p:first-child .verified {
+main .tweet-desk .tweet.dark .head .title .text .top .verified {
   color: #d9d9d9;
 }
-main .tweet-desk .tweet.dark .head .title .text p:nth-child(2),
+main .tweet-desk .tweet.dark .head .title .text .bottom,
 main .tweet-desk .tweet.dark .head .title .text .dots {
   color: #6e767d;
 }

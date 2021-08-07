@@ -454,13 +454,16 @@ main {
           }
 
           .text {
-            p:first-child {
+            .top {
               font-weight: 700;
               display: flex;
               align-items: center;
 
+              .tweet_name {
+                margin-right: 2px;
+              }
+
               .verified {
-                margin-left: 2px;
                 font-weight: 400;
                 color: $blue;
 
@@ -470,7 +473,7 @@ main {
               }
             }
 
-            p:nth-child(2) {
+            .bottom {
               color: $theme-light-gray-text;
             }
           }
@@ -538,11 +541,11 @@ main {
 
         .head {
           .title .text {
-            p:first-child .verified {
+            .top .verified {
               color: white;
             }
 
-            p:nth-child(2),
+            .bottom,
             .dots {
               color: $theme-dim-gray-text;
             }
@@ -581,11 +584,11 @@ main {
 
         .head {
           .title .text {
-            p:first-child .verified {
+            .top .verified {
               color: $theme-dark-white-text;
             }
 
-            p:nth-child(2),
+            .bottom,
             .dots {
               color: $theme-dark-gray-text;
             }

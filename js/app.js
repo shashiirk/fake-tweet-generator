@@ -354,7 +354,8 @@ function takeScreenshot() {
     windowWidth: document.documentElement.offsetWidth,
     windowHeight: document.documentElement.offsetHeight,
   }).then((canvas) => {
-    saveAs(canvas.toDataURL(), generateFileName());
+    document.querySelector('.shot').appendChild(canvas);
+    // saveAs(canvas.toDataURL(), generateFileName());
   });
 }
 

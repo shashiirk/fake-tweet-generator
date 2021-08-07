@@ -79,6 +79,7 @@
     <header>
       <h1>Fake Tweet Generator</h1>
     </header>
+    <div class="shot"></div>
     <main>
       <div class="form">
         <h2>Details</h2>
@@ -202,8 +203,8 @@
                   height="48"
                 />
                 <div class="text">
-                  <p>
-                    <span id="tweet_name">Name</span>
+                  <div class="top">
+                    <span class="tweet_name" id="tweet_name">Name</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       id="tweet_verified"
@@ -219,8 +220,10 @@
                         ></path>
                       </g>
                     </svg>
-                  </p>
-                  <p>@<span id="tweet_username">username</span></p>
+                  </div>
+                  <div class="bottom">
+                    @<span id="tweet_username">username</span>
+                  </div>
                 </div>
               </div>
               <div class="dots">
