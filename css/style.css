@@ -490,7 +490,7 @@ main .tweet-desk .tweet.dark .stats {
   color: #6e767d;
 }
 main .tweet-desk .tweet.dark .stats .stat .count {
-  color: white;
+  color: #d9d9d9;
 }
 main .tweet-desk .tweet.dark .tail {
   border-top: 1px #2f3336 solid;
