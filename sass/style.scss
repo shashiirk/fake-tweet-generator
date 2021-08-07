@@ -1,4 +1,5 @@
 $blue: #1da1f2;
+$highlight-blue: #1b95e0;
 $hover-blue: #1a90d9;
 $hover-gray: #e6e8eb;
 $black: #0f1419;
@@ -488,6 +489,10 @@ main {
         .message {
           padding-top: 16px;
           font-size: 23px;
+
+          .highlight {
+            color: $highlight-blue;
+          }
         }
 
         .tweet_info {
@@ -556,7 +561,7 @@ main {
           color: $theme-dim-gray-text;
 
           .tweet_client {
-            color: $blue;
+            color: $highlight-blue;
           }
         }
 
@@ -599,7 +604,7 @@ main {
           color: $theme-dark-gray-text;
 
           .tweet_client {
-            color: $blue;
+            color: $highlight-blue;
           }
         }
 

@@ -402,6 +402,9 @@ main .tweet-desk .tweet .content .message {
   padding-top: 16px;
   font-size: 23px;
 }
+main .tweet-desk .tweet .content .message .highlight {
+  color: #1b95e0;
+}
 main .tweet-desk .tweet .content .tweet_info {
   color: #536471;
   padding: 16px 0;
@@ -453,7 +456,7 @@ main .tweet-desk .tweet.dim .content .tweet_info {
   color: #798a96;
 }
 main .tweet-desk .tweet.dim .content .tweet_info .tweet_client {
-  color: #1da1f2;
+  color: #1b95e0;
 }
 main .tweet-desk .tweet.dim .stats {
   border-top: 1px #38444d solid;
@@ -483,7 +486,7 @@ main .tweet-desk .tweet.dark .content .tweet_info {
   color: #6e767d;
 }
 main .tweet-desk .tweet.dark .content .tweet_info .tweet_client {
-  color: #1da1f2;
+  color: #1b95e0;
 }
 main .tweet-desk .tweet.dark .stats {
   border-top: 1px #2f3336 solid;

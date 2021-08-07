@@ -137,8 +137,36 @@ function renderMessage() {
   if (messageValue === '') {
     tweetMessage.innerText = 'Generate convincing fake tweet images';
   } else {
-    tweetMessage.innerText = messageValue;
+    tweetMessage.innerText = '';
+    messageValue.split(' ').forEach((token) => {
+      if (token.match(/^@(\w){1,20}$/)) {
+        const spanEl = document.createElement('span');
+        spanEl.className = 'highlight';
+        spanEl.innerText = token;
+        tweetMessage.append(spanEl);
+        tweetMessage.append(' ');
+      } else if (token.match(/^@(\w){21,}$/)) {
+        const spanEl = document.createElement('span');
+        spanEl.className = 'highlight';
+        spanEl.innerText = token.slice(0, 21);
+        tweetMessage.append(spanEl);
+        tweetMessage.append(token.slice(21));
+        tweetMessage.append(' ');
+      } else if (token.match(/^@\w+/)) {
+        const spanEl = document.createElement('span');
+        spanEl.className = 'highlight';
+        spanEl.innerText = token.match(/^@\w+/);
+        tweetMessage.append(spanEl);
+        tweetMessage.append(token.match(/(?<=\w)\W+/));
+        tweetMessage.append(' ');
+      } else {
+        tweetMessage.append(token);
+        tweetMessage.append(' ');
+      }
+    });
   }
+
+  let test = `hey there @shashi how are you?`;
 
   const characterCountEl = message.nextElementSibling.querySelector('.count');
   characterCountEl.innerText = messageValue.length;
