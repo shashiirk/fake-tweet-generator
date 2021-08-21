@@ -20,7 +20,7 @@ See it live [here](https://shashiirk.github.io/fake-tweet-generator).
 
 ## Licence
 
-This project is licensed under [MIT](https://choosealicense.com/licenses/mit).
+This project is licensed under [MIT](LICENSE).
 
 ## Support
 
