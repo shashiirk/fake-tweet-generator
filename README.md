@@ -14,6 +14,10 @@
 
 With the Fake Tweet Generator tool you can create convincing fake tweet images. This tool is completely customizable so you can choose any name, any content, any time, any number of likes and many more.
 
+## Poster
+
+![poster](https://user-images.githubusercontent.com/48406108/154831577-9dfeee25-4d0a-4b43-adac-2ef9588fe1ae.png)
+
 ## Live Demo
 
 See it live [here](https://shashiirk.github.io/fake-tweet-generator).
