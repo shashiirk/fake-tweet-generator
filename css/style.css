@@ -401,6 +401,7 @@ main .tweet-desk .tweet .head .dots {
 main .tweet-desk .tweet .content .message {
   padding-top: 16px;
   font-size: 23px;
+  white-space: pre-wrap;
 }
 main .tweet-desk .tweet .content .message .highlight {
   color: #1b95e0;
