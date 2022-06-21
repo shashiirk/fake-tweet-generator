@@ -164,6 +164,9 @@ function renderMessage() {
         tweetMessage.append(' ');
       }
     });
+
+    // To preserve line breaks
+    tweetMessage.innerHTML = tweetMessage.innerHTML.replace(/\n/g, '<br>\n');
   }
 
   let test = `hey there @shashi how are you?`;
