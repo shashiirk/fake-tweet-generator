@@ -448,10 +448,6 @@ main {
             display: inline-block;
             border-radius: 50%;
             margin-right: 12px;
-            transform: translateZ(0);
-            -webkit-transform: translateZ(0);
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: optimize-contrast;
           }
 
           .text {
